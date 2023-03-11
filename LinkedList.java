@@ -74,6 +74,25 @@ public class LinkedList {
         }
     }
 
+    public Object searchElement(Object input)
+    {
+        Node temp = head;
+        int index =0;
+        while(temp != null)
+        {
+            index++;
+            if(temp.getData() == input)
+            {
+
+                String res=  temp.getData() +" found at index "+index;
+
+                return res;
+            }
+            temp = temp.getRef();
+        }
+        return null;
+    }
+
     public static void main(String[] args) {
         System.out.println("Welcome to Linked List Program: ");
         LinkedList list = new LinkedList();
@@ -92,7 +111,7 @@ public class LinkedList {
         list.addLast(70);
         list.display();
 
-//        Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
 //        System.out.println("Add Node Between 2 Nodes: ");
 //        list.addFirst(56);
 //        list.display();
@@ -105,9 +124,12 @@ public class LinkedList {
 //        System.out.println("Delete First Element In LinkedList: ");
 //        list.deleteFirst();
 //        list.display();
-        System.out.println("Delete Last Element In LinkedList: ");
-        list.deleteLast();
-        list.display();
+//        System.out.println("Delete Last Element In LinkedList: ");
+//        list.deleteLast();
+//        list.display();
+        System.out.println("Enter element to Search in Linked list: ");
+        int input = sc.nextInt();
+        System.out.println(list.searchElement(input));
     }
 }
 
