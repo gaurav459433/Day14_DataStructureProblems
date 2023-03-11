@@ -117,6 +117,19 @@ public class LinkedList {
         newNode.setRef(right);
         left.setRef(newNode);
     }
+    // Program For Deleting Specific Position
+    public void deleteAtPosition(Object data) {
+        int index = 0;
+        Node left = head;
+        Node right = left.getRef();
+        while (right.getData() != data) {
+            left = left.getRef();
+            right = right.getRef();
+            index++;
+        }
+        left.setRef(right.getRef());
+
+    }
 
     public static void main(String[] args) {
         System.out.println("Welcome to Linked List Program: ");
@@ -161,6 +174,10 @@ public class LinkedList {
         int value = sc.nextInt();
         list.insertElement(element,value);
         list.display();
+        System.out.println("Delete Specific Position Element In LinkedList: ");
+        list.deleteAtPosition(40);
+        list.display();
+
     }
 }
 
