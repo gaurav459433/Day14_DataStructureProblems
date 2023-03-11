@@ -51,10 +51,27 @@ public class LinkedList {
             temp = temp.getRef();
         }
     }
-
     public void deleteFirst()
     {
         head = head.getRef();
+    }
+
+    public void deleteLast()
+    {
+
+        if(head == null)
+            System.out.println("Linked List is Empty");
+        else if(head.getRef() == null)
+            head = null;
+        else
+        {
+            Node temp = head;
+            while(temp.getRef().getRef() != null)
+            {
+                temp = temp.getRef();
+            }
+            temp.setRef(null);
+        }
     }
 
     public static void main(String[] args) {
@@ -67,26 +84,29 @@ public class LinkedList {
 //        list.display();
 //        list.addFirst(56);
 //        list.display();
-//        System.out.println("Add Nodes at Last: ");
-//        list.addLast(56);
-//        list.display();
-//        list.addLast(30);
-//        list.display();
-//        list.addLast(70);
-//        list.display();
-
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Add Node Between 2 Nodes: ");
-        list.addFirst(56);
+        System.out.println("Add Nodes at Last: ");
+        list.addLast(56);
+        list.display();
+        list.addLast(30);
         list.display();
         list.addLast(70);
         list.display();
-        System.out.println("Enter 1 To Add Node 30 Between 56 & 70 : ");
-        int position = sc.nextInt();
-        list.addAtPosition(30, position);
-        list.display();
-        System.out.println("Delete First Element In LinkedList: ");
-        list.deleteFirst();
+
+//        Scanner sc = new Scanner(System.in);
+//        System.out.println("Add Node Between 2 Nodes: ");
+//        list.addFirst(56);
+//        list.display();
+//        list.addLast(70);
+//        list.display();
+//        System.out.println("Enter 1 To Add Node 30 Between 56 & 70 : ");
+//        int position = sc.nextInt();
+//        list.addAtPosition(30, position);
+//        list.display();
+//        System.out.println("Delete First Element In LinkedList: ");
+//        list.deleteFirst();
+//        list.display();
+        System.out.println("Delete Last Element In LinkedList: ");
+        list.deleteLast();
         list.display();
     }
 }
