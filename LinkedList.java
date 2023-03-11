@@ -52,6 +52,11 @@ public class LinkedList {
         }
     }
 
+    public void deleteFirst()
+    {
+        head = head.getRef();
+    }
+
     public static void main(String[] args) {
         System.out.println("Welcome to Linked List Program: ");
         LinkedList list = new LinkedList();
@@ -79,6 +84,9 @@ public class LinkedList {
         System.out.println("Enter 1 To Add Node 30 Between 56 & 70 : ");
         int position = sc.nextInt();
         list.addAtPosition(30, position);
+        list.display();
+        System.out.println("Delete First Element In LinkedList: ");
+        list.deleteFirst();
         list.display();
     }
 }
